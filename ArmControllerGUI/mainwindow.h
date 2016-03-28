@@ -30,6 +30,8 @@ private slots:
 
     void on_jointAngle_5_valueChanged(int value);
 
+    void on_home_position_button_clicked();
+
 private:
     Ui::MainWindow *ui;
 

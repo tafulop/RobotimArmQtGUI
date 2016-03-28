@@ -113,8 +113,13 @@ void MainWindow::on_jointAngleLcd_1_overflow()
 }
 
 
+void MainWindow::on_home_position_button_clicked()
+{
+    armControl.moveToHomePosition();
 
+    // reset sliders
+    initializeSliders();
 
-
+}
 
 
