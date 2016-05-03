@@ -64,3 +64,14 @@ DEPENDPATH += $$PWD/../../CustomLibraries
 unix:!macx: PRE_TARGETDEPS += $$PWD/../../CustomLibraries/libjson.a
 
 unix:!macx: LIBS += -lzmq
+
+unix:!macx: LIBS += -L$$PWD/../../CalculatorLibrary/dist/Debug/GNU-Linux/ -lcalculatorlibrary
+
+INCLUDEPATH += $$PWD/../../CalculatorLibrary/dist/Debug/GNU-Linux
+DEPENDPATH += $$PWD/../../CalculatorLibrary/dist/Debug/GNU-Linux
+
+unix:!macx: PRE_TARGETDEPS += $$PWD/../../CalculatorLibrary/dist/Debug/GNU-Linux/libcalculatorlibrary.a
+
+unix:!macx: LIBS += -larmadillo
+
+unix:!macx: LIBS += -lpthread

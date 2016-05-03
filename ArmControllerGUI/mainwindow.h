@@ -44,6 +44,8 @@ private:
     /* initializes the slider values */
     void initializeSliders();
 
+    /* refresh effector position value */
+    void refreshEffectorPos();
 
 };
 

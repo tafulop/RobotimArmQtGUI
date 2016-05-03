@@ -31,7 +31,8 @@ void MainWindow::on_jointAngle_1_valueChanged(int value)
 
     ui->jointAngleLcd_1->display(changeTo);
 
-    std::cout << "J1 changed to: " << changeTo << std::endl;
+
+    refreshEffectorPos();
 
 }
 
@@ -45,6 +46,8 @@ void MainWindow::on_jointAngle_2_valueChanged(int value)
 
   ui->jointAngleLcd_2->display(changeTo);
 
+  refreshEffectorPos();
+
 }
 
 
@@ -55,6 +58,8 @@ void MainWindow::on_jointAngle_3_valueChanged(int value)
   pcManager.joints.get("J3")->setAngle(changeTo);
 
   ui->jointAngleLcd_3->display(changeTo);
+
+  refreshEffectorPos();
 
 }
 
@@ -67,6 +72,8 @@ void MainWindow::on_jointAngle_4_valueChanged(int value)
 
   ui->jointAngleLcd_4->display(changeTo);
 
+  refreshEffectorPos();
+
 }
 
 
@@ -77,6 +84,8 @@ void MainWindow::on_jointAngle_5_valueChanged(int value)
   pcManager.joints.get("J5")->setAngle(changeTo);
 
   ui->jointAngleLcd_5->display(changeTo);
+
+  refreshEffectorPos();
 
 }
 
@@ -104,6 +113,10 @@ void MainWindow::initializeSliders(){
     ui->jointAngle_5->setRange(pcManager.joints.get("J5")->getMinAngle()*10, pcManager.joints.get("J5")->getMaxAngle()*10);
     ui->jointAngle_5->setSliderPosition(0);
 
+    this->armControl.forwardKinematics.setAutorun(true);
+
+
+
 }
 
 
@@ -119,7 +132,30 @@ void MainWindow::on_home_position_button_clicked()
 
     // reset sliders
     initializeSliders();
+    refreshEffectorPos();
 
 }
 
+
+void MainWindow::refreshEffectorPos(){
+
+
+
+    arma::fmat temp = this->armControl.getEffectorPosition();
+
+
+    QString s = QString::number(temp.at(0,0), 'f', 4);
+
+    std::cout << temp;
+
+
+    ui->x_value->setText(s);
+
+    s = QString::number(temp.at(1,0), 'f', 4);
+    ui->y_value->setText(s);
+
+    s = QString::number(temp.at(2,0), 'f', 4);
+    ui->z_value->setText(s);
+
+}
 

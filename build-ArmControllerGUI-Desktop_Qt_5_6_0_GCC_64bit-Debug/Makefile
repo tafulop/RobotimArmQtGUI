@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++0x -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../ArmControllerGUI -I. -I../../ArmControllerLibrary/dist/Debug/GNU-Linux -I../../InitializerLibrary/dist/Debug/GNU-Linux -I../../PartContainerLibrary/dist/Debug/GNU-Linux -I../../SocketServer/dist/Debug/GNU-Linux -I../../RoboticArmPartLibrary/dist/Debug/GNU-Linux -I../../CustomLibraries -I/opt/Qt5.6.0/5.6/gcc_64/include -I/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets -I/opt/Qt5.6.0/5.6/gcc_64/include/QtGui -I/opt/Qt5.6.0/5.6/gcc_64/include/QtCore -I. -I. -I/opt/Qt5.6.0/5.6/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../ArmControllerGUI -I. -I../../ArmControllerLibrary/dist/Debug/GNU-Linux -I../../InitializerLibrary/dist/Debug/GNU-Linux -I../../PartContainerLibrary/dist/Debug/GNU-Linux -I../../SocketServer/dist/Debug/GNU-Linux -I../../RoboticArmPartLibrary/dist/Debug/GNU-Linux -I../../CustomLibraries -I../../CalculatorLibrary/dist/Debug/GNU-Linux -I/opt/Qt5.6.0/5.6/gcc_64/include -I/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets -I/opt/Qt5.6.0/5.6/gcc_64/include/QtGui -I/opt/Qt5.6.0/5.6/gcc_64/include/QtCore -I. -I. -I/opt/Qt5.6.0/5.6/gcc_64/mkspecs/linux-g++
 QMAKE         = /opt/Qt5.6.0/5.6/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -36,7 +36,7 @@ DISTNAME      = ArmControllerGUI1.0.0
 DISTDIR = /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/build-ArmControllerGUI-Desktop_Qt_5_6_0_GCC_64bit-Debug/.tmp/ArmControllerGUI1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-z,origin -Wl,-rpath,\$$ORIGIN -Wl,-rpath,/opt/Qt5.6.0/5.6/gcc_64/lib
-LIBS          = $(SUBLIBS) -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../ArmControllerLibrary/dist/Debug/GNU-Linux/ -larmcontrollerlibrary -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../InitializerLibrary/dist/Debug/GNU-Linux/ -linitializerlibrary -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../PartContainerLibrary/dist/Debug/GNU-Linux/ -lpartcontainerlibrary -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../SocketServer/dist/Debug/GNU-Linux/ -lsocketserver -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../RoboticArmPartLibrary/dist/Debug/GNU-Linux/ -lroboticarmpartlibrary -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../CustomLibraries/ -ljson -lzmq -L/opt/Qt5.6.0/5.6/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../ArmControllerLibrary/dist/Debug/GNU-Linux/ -larmcontrollerlibrary -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../InitializerLibrary/dist/Debug/GNU-Linux/ -linitializerlibrary -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../PartContainerLibrary/dist/Debug/GNU-Linux/ -lpartcontainerlibrary -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../SocketServer/dist/Debug/GNU-Linux/ -lsocketserver -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../RoboticArmPartLibrary/dist/Debug/GNU-Linux/ -lroboticarmpartlibrary -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../CustomLibraries/ -ljson -lzmq -L/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../CalculatorLibrary/dist/Debug/GNU-Linux/ -lcalculatorlibrary -larmadillo -L/opt/Qt5.6.0/5.6/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -197,7 +197,7 @@ TARGET        = ArmControllerGUI
 first: all
 ####### Build rules
 
-$(TARGET): /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../ArmControllerLibrary/dist/Debug/GNU-Linux/libarmcontrollerlibrary.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../InitializerLibrary/dist/Debug/GNU-Linux/libinitializerlibrary.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../PartContainerLibrary/dist/Debug/GNU-Linux/libpartcontainerlibrary.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../SocketServer/dist/Debug/GNU-Linux/libsocketserver.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../RoboticArmPartLibrary/dist/Debug/GNU-Linux/libroboticarmpartlibrary.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../CustomLibraries/libjson.a ui_mainwindow.h $(OBJECTS)  
+$(TARGET): /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../ArmControllerLibrary/dist/Debug/GNU-Linux/libarmcontrollerlibrary.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../InitializerLibrary/dist/Debug/GNU-Linux/libinitializerlibrary.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../PartContainerLibrary/dist/Debug/GNU-Linux/libpartcontainerlibrary.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../SocketServer/dist/Debug/GNU-Linux/libsocketserver.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../RoboticArmPartLibrary/dist/Debug/GNU-Linux/libroboticarmpartlibrary.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../CustomLibraries/libjson.a /mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI/../../CalculatorLibrary/dist/Debug/GNU-Linux/libcalculatorlibrary.a ui_mainwindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../ArmControllerGUI/ArmControllerGUI.pro /opt/Qt5.6.0/5.6/gcc_64/mkspecs/linux-g++/qmake.conf /opt/Qt5.6.0/5.6/gcc_64/mkspecs/features/spec_pre.prf \
@@ -645,8 +645,10 @@ moc_mainwindow.cpp: /opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QMainWindow \
 		../../CustomLibraries/json_st.hh \
 		../../CustomLibraries/json.tab.hh \
 		../../InitializerLibrary/InitializationManager.h \
+		../../CalculatorLibrary/ForwardKinematics.h \
+		../../CalculatorLibrary/DenavitHartenbergMatrix.h \
 		../ArmControllerGUI/mainwindow.h
-	/opt/Qt5.6.0/5.6/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.6.0/5.6/gcc_64/mkspecs/linux-g++ -I/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI -I/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerLibrary/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/InitializerLibrary/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/PartContainerLibrary/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/SocketServer/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/RoboticArmPartLibrary/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/CustomLibraries -I/opt/Qt5.6.0/5.6/gcc_64/include -I/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets -I/opt/Qt5.6.0/5.6/gcc_64/include/QtGui -I/opt/Qt5.6.0/5.6/gcc_64/include/QtCore -I. ../ArmControllerGUI/mainwindow.h -o moc_mainwindow.cpp
+	/opt/Qt5.6.0/5.6/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.6.0/5.6/gcc_64/mkspecs/linux-g++ -I/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerGui/ArmControllerGUI -I/mnt/seagate_1TB/Development/Robotkar_reboot/ArmControllerLibrary/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/InitializerLibrary/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/PartContainerLibrary/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/SocketServer/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/RoboticArmPartLibrary/dist/Debug/GNU-Linux -I/mnt/seagate_1TB/Development/Robotkar_reboot/CustomLibraries -I/mnt/seagate_1TB/Development/Robotkar_reboot/CalculatorLibrary/dist/Debug/GNU-Linux -I/opt/Qt5.6.0/5.6/gcc_64/include -I/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets -I/opt/Qt5.6.0/5.6/gcc_64/include/QtGui -I/opt/Qt5.6.0/5.6/gcc_64/include/QtCore -I. ../ArmControllerGUI/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -793,6 +795,8 @@ main.o: ../ArmControllerGUI/main.cpp ../ArmControllerGUI/mainwindow.h \
 		../../CustomLibraries/json_st.hh \
 		../../CustomLibraries/json.tab.hh \
 		../../InitializerLibrary/InitializationManager.h \
+		../../CalculatorLibrary/ForwardKinematics.h \
+		../../CalculatorLibrary/DenavitHartenbergMatrix.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QApplication \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qapplication.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtCore/qcoreapplication.h \
@@ -929,6 +933,8 @@ mainwindow.o: ../ArmControllerGUI/mainwindow.cpp ../ArmControllerGUI/mainwindow.
 		../../CustomLibraries/json_st.hh \
 		../../CustomLibraries/json.tab.hh \
 		../../InitializerLibrary/InitializationManager.h \
+		../../CalculatorLibrary/ForwardKinematics.h \
+		../../CalculatorLibrary/DenavitHartenbergMatrix.h \
 		ui_mainwindow.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtCore/QVariant \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QAction \
@@ -945,6 +951,11 @@ mainwindow.o: ../ArmControllerGUI/mainwindow.cpp ../ArmControllerGUI/mainwindow.
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qbuttongroup.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QFrame \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qframe.h \
+		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QHBoxLayout \
+		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qboxlayout.h \
+		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qlayout.h \
+		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qgridlayout.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QHeaderView \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qheaderview.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qabstractitemview.h \
@@ -965,19 +976,13 @@ mainwindow.o: ../ArmControllerGUI/mainwindow.cpp ../ArmControllerGUI/mainwindow.
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qlcdnumber.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QLabel \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QMenuBar \
-		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qmenubar.h \
-		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QPushButton \
+		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qpushbutton.h \
+		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QSlider \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QStatusBar \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qstatusbar.h \
-		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QToolBar \
-		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qtoolbar.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QVBoxLayout \
-		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/qgridlayout.h \
 		/opt/Qt5.6.0/5.6/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../ArmControllerGUI/mainwindow.cpp
 

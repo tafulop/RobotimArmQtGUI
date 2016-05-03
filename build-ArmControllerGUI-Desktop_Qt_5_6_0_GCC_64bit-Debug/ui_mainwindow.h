@@ -63,13 +63,24 @@ public:
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label_2;
+    QFrame *effectorDataFrame;
+    QWidget *verticalLayoutWidget_4;
+    QVBoxLayout *verticalLayout_4;
+    QLabel *label;
+    QLabel *label_4;
+    QLabel *label_5;
+    QWidget *verticalLayoutWidget_6;
+    QVBoxLayout *verticalLayout_6;
+    QLabel *x_value;
+    QLabel *y_value;
+    QLabel *z_value;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(431, 664);
+        MainWindow->resize(802, 627);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         frame = new QFrame(centralWidget);
@@ -269,6 +280,57 @@ public:
 
         horizontalLayout->addWidget(label_2);
 
+        effectorDataFrame = new QFrame(centralWidget);
+        effectorDataFrame->setObjectName(QStringLiteral("effectorDataFrame"));
+        effectorDataFrame->setGeometry(QRect(490, 40, 241, 171));
+        effectorDataFrame->setFrameShape(QFrame::StyledPanel);
+        effectorDataFrame->setFrameShadow(QFrame::Raised);
+        verticalLayoutWidget_4 = new QWidget(effectorDataFrame);
+        verticalLayoutWidget_4->setObjectName(QStringLiteral("verticalLayoutWidget_4"));
+        verticalLayoutWidget_4->setGeometry(QRect(20, 10, 51, 151));
+        verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_4);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(verticalLayoutWidget_4);
+        label->setObjectName(QStringLiteral("label"));
+
+        verticalLayout_4->addWidget(label);
+
+        label_4 = new QLabel(verticalLayoutWidget_4);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        verticalLayout_4->addWidget(label_4);
+
+        label_5 = new QLabel(verticalLayoutWidget_4);
+        label_5->setObjectName(QStringLiteral("label_5"));
+
+        verticalLayout_4->addWidget(label_5);
+
+        verticalLayoutWidget_6 = new QWidget(effectorDataFrame);
+        verticalLayoutWidget_6->setObjectName(QStringLiteral("verticalLayoutWidget_6"));
+        verticalLayoutWidget_6->setGeometry(QRect(110, 10, 111, 151));
+        verticalLayout_6 = new QVBoxLayout(verticalLayoutWidget_6);
+        verticalLayout_6->setSpacing(6);
+        verticalLayout_6->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        x_value = new QLabel(verticalLayoutWidget_6);
+        x_value->setObjectName(QStringLiteral("x_value"));
+
+        verticalLayout_6->addWidget(x_value);
+
+        y_value = new QLabel(verticalLayoutWidget_6);
+        y_value->setObjectName(QStringLiteral("y_value"));
+
+        verticalLayout_6->addWidget(y_value);
+
+        z_value = new QLabel(verticalLayoutWidget_6);
+        z_value->setObjectName(QStringLiteral("z_value"));
+
+        verticalLayout_6->addWidget(z_value);
+
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -308,6 +370,12 @@ public:
 #endif // QT_NO_TOOLTIP
         home_position_button->setText(QApplication::translate("MainWindow", "Home position", 0));
         label_2->setText(QApplication::translate("MainWindow", "Misc", 0));
+        label->setText(QApplication::translate("MainWindow", "x:", 0));
+        label_4->setText(QApplication::translate("MainWindow", "y:", 0));
+        label_5->setText(QApplication::translate("MainWindow", "z:", 0));
+        x_value->setText(QApplication::translate("MainWindow", "x_value", 0));
+        y_value->setText(QApplication::translate("MainWindow", "y_value", 0));
+        z_value->setText(QApplication::translate("MainWindow", "z_value", 0));
     } // retranslateUi
 
 };
