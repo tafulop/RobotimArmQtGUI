@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <iostream>
+#include <QTimer>
 #include "../../ArmControllerLibrary/Controller.h"
 
 namespace Ui {
@@ -32,6 +33,8 @@ private slots:
 
     void on_home_position_button_clicked();
 
+    void refreshEffectorPos();
+
 private:
     Ui::MainWindow *ui;
 
@@ -44,8 +47,8 @@ private:
     /* initializes the slider values */
     void initializeSliders();
 
-    /* refresh effector position value */
-    void refreshEffectorPos();
+
+    QTimer *timer;
 
 };
 

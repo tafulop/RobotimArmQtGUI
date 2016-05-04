@@ -13,7 +13,16 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initializeSliders();
 
+    // enable calculation
+    this->armControl.forwardKinematics.setAutorun(true);
+
+    this->timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(refreshEffectorPos()));
+    timer->start(100);
+
 }
+
+
 
 MainWindow::~MainWindow()
 {
@@ -32,7 +41,7 @@ void MainWindow::on_jointAngle_1_valueChanged(int value)
     ui->jointAngleLcd_1->display(changeTo);
 
 
-    refreshEffectorPos();
+    //refreshEffectorPos();
 
 }
 
@@ -46,7 +55,7 @@ void MainWindow::on_jointAngle_2_valueChanged(int value)
 
   ui->jointAngleLcd_2->display(changeTo);
 
-  refreshEffectorPos();
+  //refreshEffectorPos();
 
 }
 
@@ -59,7 +68,7 @@ void MainWindow::on_jointAngle_3_valueChanged(int value)
 
   ui->jointAngleLcd_3->display(changeTo);
 
-  refreshEffectorPos();
+  //refreshEffectorPos();
 
 }
 
@@ -72,7 +81,7 @@ void MainWindow::on_jointAngle_4_valueChanged(int value)
 
   ui->jointAngleLcd_4->display(changeTo);
 
-  refreshEffectorPos();
+  //refreshEffectorPos();
 
 }
 
@@ -85,7 +94,7 @@ void MainWindow::on_jointAngle_5_valueChanged(int value)
 
   ui->jointAngleLcd_5->display(changeTo);
 
-  refreshEffectorPos();
+  //refreshEffectorPos();
 
 }
 
@@ -113,10 +122,6 @@ void MainWindow::initializeSliders(){
     ui->jointAngle_5->setRange(pcManager.joints.get("J5")->getMinAngle()*10, pcManager.joints.get("J5")->getMaxAngle()*10);
     ui->jointAngle_5->setSliderPosition(0);
 
-    this->armControl.forwardKinematics.setAutorun(true);
-
-
-
 }
 
 
@@ -138,7 +143,6 @@ void MainWindow::on_home_position_button_clicked()
 
 
 void MainWindow::refreshEffectorPos(){
-
 
 
     arma::fmat temp = this->armControl.getEffectorPosition();
